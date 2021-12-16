@@ -1,24 +1,39 @@
-class SnakeBody:
-    def __init__(self):
-        self.__head = None
-        self.__tail = None
-        self.__size = 0
+#todo: change the file's name to snake node.
 
-    def create_new_node(self, coordinate):
+class SnakeNode:
+    """
+    #todo: add description
+    """
+
+    def __init__(self, coordinate):
+        """
+        This function initializes an independent node.
+        :param coordinate: the coordinates of the node's current cell.
+        """
         self.__data = coordinate
         self.__previous = None
         self.__next = None
 
-    def add_to_head(self, coordinate):
-        new_head = self.create_new_node(coordinate)
-        new_head.next = self.__head
-        self.__head.previous = new_head
-        self.__head = new_head
+    def set_previous(self, new_previous):
+        """
+        This function sets a new previous to the current node.
+        :param new_previous: a SnakeNode-type object which will be the current node's previous.
+        :return: None
+        """
+        self.__previous = new_previous
 
-    def cut_from_tail(self):
+    def set_next(self, new_next):
         """
-        this function removes the current tail of the snake
-        (the last node of the snake's body)
+        This function sets a new next to the current node.
+        :param new_next: a SnakeNode-type object which will be the current node's next.
+        :return: None
         """
-        self.__tail = self.__tail.previous
-        self.__tail.next = None
+        self.__next = new_next
+
+    def get_previous(self):
+        #  todo: delete
+        pass
+
+    def get_next(self):
+        #  todo: delete
+        pass
